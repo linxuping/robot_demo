@@ -12,3 +12,6 @@ pip install robotframework-selenium2library
 
 pybot ***.txt 
 
+doc: 
+http://robotframework.org/Selenium2Library/doc/Selenium2Library.html
+
