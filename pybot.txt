@@ -1,0 +1,25 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+${url}    http://local/discuz/ext/auction/index.php
+${xpath1}    xpath=//input[@ext1='48']
+${xpath2}    xpath=//input[@ext1='50']
+
+*** Keywords ***
+Run Test
+    Goto    ${url} 
+    Click Element    ${xpath1} 
+    Click Element    ${xpath2} 
+
+*** Test Cases ***
+autofetch
+    Open Browser    ${url}    chrome
+    Input Text    xpath=//input[@id='username']    lin
+    Input Text    xpath=//input[@id='password']    lin
+    Click Element    xpath=//button[@class='btn-orange']
+    :FOR   ${i}    in range    1    10000
+    \    Log    ${i}
+    \    Run Test
+
+
